@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 目标语言的版本
+    "module": "esnext", // 生成代码的模块标准
+    "strict": true, // 开启所有严格的类型检查
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true, // 允许export=导出，由import from 导入
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".", // 解析相对模块的基地址，默认是当前目录
+    "typeRoots": [ // 声明文件目录，默认时node_modules/@types
+      "node_modules/@types"
+    ],
+    "types": [ // 在typeRoots下找声明文件
+      "webpack-env",
+      "jest"
+    ],
+    "paths": { // 路径映射，相当于baseUrl
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
